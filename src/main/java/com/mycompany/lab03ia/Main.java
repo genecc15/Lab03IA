@@ -16,7 +16,9 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("Hola mundo");
+        Node<String> nodo1 = new Node<>("Holi");
+        Node <Integer> nodo2 = new Node<>(5);
+        var node3 = new Node<Boolean>(true);
     }
     
 }
