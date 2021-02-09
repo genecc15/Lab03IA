@@ -33,4 +33,8 @@ public class Node<T> {
         this.neighbors.add(node);
         node.neighbors.add(this);
     }
+    
+    public String toString(){
+        return this.value.toString();
+    }
 }
