@@ -43,7 +43,8 @@ public class Main {
         zona14.connect(zona13);
         zona13.connect(zona12);
         zona12.connect(zona21);
-        BFS.search(16, zona2);
+        //BFS.search(16, zona2);
+        DFS.search(16, zona2);
     }
     
 }
