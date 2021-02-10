@@ -27,6 +27,15 @@ public class Node<T> {
         return Collections.unmodifiableSet(neighbors);
     }
     
+    public boolean IsNeighbors(Node<T> node){
+        if(this.neighbors.contains(node)){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    
     public void connect(Node<T> node){
         if(this == node) 
             throw new IllegalArgumentException("Un nodo intenta referiarse a si mismo");

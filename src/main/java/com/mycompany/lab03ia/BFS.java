@@ -10,6 +10,8 @@ import java.util.Set;
 import java.util.Optional;
 import java.util.Queue;
 import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -19,28 +21,51 @@ import java.util.Stack;
 public class BFS {
     public static<T> Optional<Node<T>> search(T value, Node<T> start){
         Queue<Node<T>> queue = new ArrayDeque<>();
+        Queue<Node<T>> FinalQ = new ArrayDeque<>();
+        Queue<Node<T>> FinalQue = new ArrayDeque<>();
+        Stack<Node<T>> Tata = new Stack<>();
+        
+        Queue<Node<T>> Salva = new ArrayDeque<>();
         queue.add(start);
-        Stack<Node<T>> stack = new Stack<>();
-        Node<T> GuardarNodo;
+        //Node<T> GuardarNodo;
         
         Node<T> currentNode;
+        Node<T> Temp;
+        Node<T> Temp2;
         Set<Node<T>> closed = new HashSet<>();
         
         while(!queue.isEmpty()){
-//            for(Node<T> t: queue){
-//                System.out.println(t.toString());
-//            }
-//            System.out.println("Cuanto te pagaban");
-            Node<T>[] Holi = (Node<T>[]) queue.toArray();
-            GuardarNodo = Holi[Holi.length -1];
+            //Node<T>[] Holi = (Node<T>[]) queue.toArray();
+            FinalQ.add(queue.peek());
             currentNode = queue.remove();
             System.out.println("Visitando el nodo: " + currentNode.getValue());
-            stack.push(currentNode);
             
             //Verificar si se encuentra en meta
             if(currentNode.getValue().equals(value)){
                 //System.out.println("Para quien trabajas");
+            System.out.println("Prueba: " + FinalQ.toString());
+                for (int i = 0; i < 1; i++) {
+                    //FinalQue.add(FinalQ.remove());
+                    Tata.add(FinalQ.remove());
+                }
+//                for (int i = 0; i < FinalQ.size(); i++) {
+//                     stack.push(FinalQ.remove());
+//                }
+                for(int i = 0; i< 2; i++)
+                {
+                    Temp = FinalQ.remove();
+                    Temp2 = Tata.peek();
+                    if (Temp.IsNeighbors(Temp2)) {
+                        Tata.add(Temp);
+                    }
+                    else
+                    {
+                        
+                    }
+                }
                 
+            System.out.println("Prueba2: " + Tata.toString());
+            System.out.println("Prueba3: " + Salva.toString());
                 return Optional.of(currentNode);
             }else{
                 closed.add(currentNode);
