@@ -37,11 +37,7 @@ public class BFS {
             //Verificar si se encuentra en meta
             if(currentNode.getValue().equals(value)){
                 //System.out.println("Para quien trabajas");
-                for(Node<T> t: stack)
-                {
-                    Queue<Node<T>> temp = new ArrayDeque<>();
-                    temp.addAll(currentNode.getNeighbors());
-                }
+                
                 return Optional.of(currentNode);
             }else{
                 closed.add(currentNode);
