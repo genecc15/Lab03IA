@@ -28,6 +28,7 @@ public class Main {
         var zona14 = new Node<Integer>(14);
         var zona12 = new Node<Integer>(12);
         var zona21 = new Node<Integer>(21);
+        var zona100 = new Node<Integer>(100);
         
         zona1.connect(zona2);
         zona1.connect(zona5);
@@ -44,7 +45,8 @@ public class Main {
         zona13.connect(zona12);
         zona12.connect(zona21);
         //BFS.search(16, zona2);
-        DFS.search(16, zona2);
+        //DFS.search(16, zona2);
+        BFSVersion2.GrapSearch(16, zona2);
     }
     
 }
