@@ -51,6 +51,8 @@ public class BFS {
 //                for (int i = 0; i < FinalQ.size(); i++) {
 //                     stack.push(FinalQ.remove());
 //                }
+
+//Ingeeeee llevaba una lógica pero me quedé sin tiempo, sorry :( 
                 for(int i = 0; i< 2; i++)
                 {
                     Temp = FinalQ.remove();
