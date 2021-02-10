@@ -23,7 +23,7 @@ public class BFS {
         Queue<Node<T>> queue = new ArrayDeque<>();
         Queue<Node<T>> FinalQ = new ArrayDeque<>();
         Queue<Node<T>> FinalQue = new ArrayDeque<>();
-        Stack<Node<T>> Tata = new Stack<>();
+        Stack<Node<T>> stack = new Stack<>();
         
         Queue<Node<T>> Salva = new ArrayDeque<>();
         queue.add(start);
@@ -46,7 +46,7 @@ public class BFS {
             System.out.println("Prueba: " + FinalQ.toString());
                 for (int i = 0; i < 1; i++) {
                     //FinalQue.add(FinalQ.remove());
-                    Tata.add(FinalQ.remove());
+                    stack.add(FinalQ.remove());
                 }
 //                for (int i = 0; i < FinalQ.size(); i++) {
 //                     stack.push(FinalQ.remove());
@@ -56,9 +56,9 @@ public class BFS {
                 for(int i = 0; i< 2; i++)
                 {
                     Temp = FinalQ.remove();
-                    Temp2 = Tata.peek();
+                    Temp2 = stack.peek();
                     if (Temp.IsNeighbors(Temp2)) {
-                        Tata.add(Temp);
+                        stack.add(Temp);
                     }
                     else
                     {
@@ -66,7 +66,7 @@ public class BFS {
                     }
                 }
                 
-            System.out.println("Prueba2: " + Tata.toString());
+            System.out.println("Prueba2: " + stack.toString());
             System.out.println("Prueba3: " + Salva.toString());
                 return Optional.of(currentNode);
             }else{
